@@ -1,0 +1,30 @@
+@if ( pokemon() === null) {
+  <div class="flex justify-center items-center w-svw h-svh">
+    <h1 class="text-3xl font-bold">Cargando...</h1>
+  </div>
+} @else {
+
+  <!-- Esta variable solo vive en el ambito del else -->
+  @let myPokemon = pokemon()!;
+
+  <section class="felx flex-col justify-center">
+    <div class="flex justify-center">
+      <h1 class="text-4xl capitalize" >{{ myPokemon.name }}</h1>
+    </div>
+  </section>
+
+  <section class="flex flex-col justify-center items-center w-full">
+    <img 
+      class="w-64 h-64 my-10"
+      width="256px"
+      height="256px"
+      [src]="myPokemon.sprites.other?.['official-artwork']?.front_default"
+      [alt]="myPokemon.name">
+    
+    @if (myPokemon.cries.latest !== null) {
+      <audio controls >
+        <source [src]="myPokemon.cries.latest">
+      </audio>
+    }
+  </section>
+}

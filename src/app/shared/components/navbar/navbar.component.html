@@ -1,0 +1,5 @@
+<nav class="text-gray-100 gap-4 top-0 absolute z-50 w-full flex justify-end px-2 py-3 bg-slate-900 shadow-md">
+  @for (path of linksNavegator(); track $index) {
+    <a class="hover:underline" routerLinkActive="text-blue-500 underline" [routerLink]="path.link">{{ path.name }}</a>
+  }
+</nav>
