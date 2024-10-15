@@ -15,7 +15,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router'
 export class NavbarComponent {
 
   public linksNavegator = signal([
-    { link: '/pokemons', name: 'Prokemons' },
+    { link: '/pokemons/page/1', name: 'Prokemons' },
     { link: '/about', name: 'About' },
     { link: '/pricing', name: 'Pricing' },
     { link: '/contact', name: 'Contact' },
